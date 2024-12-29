@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC PLAYLIST MANAGER</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Flexbox to align the image and title horizontally */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2px; /* Space between the image and title */
+            margin-bottom: 20px;
+        }
+
+            .logo img {
+                width: 190px; /* Set the size of the image */
+                height: auto;
+            }
+
+            .logo h1 {
+                font-size: 2.5rem; /* Title font size */
+                font-weight: bold;
+                color: #4CAF50;
+                letter-spacing: 0.4px;
+            }
+
+        /* Buttons arranged in two lines */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+            .action-btn:hover {
+                background-color: #45a049;
+            }
+
+        /* Style for song titles */
+        #songs h3 {
+            color: #4CAF50; /* Green color for song titles */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Section with image and title side by side -->
+    <div class="logo">
+        <img src="C:/Users/Qasim Hafeez/Downloads/Black and White Flat Illustrative Music Studio Logo (1) (1).png" alt="Music Playlist Logo">
+        <h1>MUSIC PLAYLIST MANAGER</h1>
+        <img src="C:/Users/Qasim Hafeez/Downloads/Black and White Flat Illustrative Music Studio Logo (1) (1).png" alt="Music Playlist Logo">
+    </div>
+
+    <div class="controls">
+        <input type="text" id="songTitle" placeholder="Song Title" class="input-field">
+        <input type="text" id="songArtist" placeholder="Artist" class="input-field">
+        <input type="text" id="songPath" placeholder="File Path (e.g., C:/Music/song.mp3)" class="input-field">
+        <button id="addSongBtn" class="action-btn">Add Song</button>
+        <button id="playBtn" class="action-btn">Play Next</button>
+        <button id="historyBtn" class="action-btn">Show History</button>
+        <button id="searchSongBtn" class="action-btn">Search Song</button>
+    </div>
+
+    <div id="playlist">
+        <h2>Playlist</h2>
+        <ul id="songList"></ul>
+    </div>
+
+    <div id="queue">
+        <h2>Queue</h2>
+        <ul id="songQueue"></ul>
+    </div>
+
+    <div id="history">
+        <h2>Play History</h2>
+        <ul id="historyList"></ul>
+    </div>
+
+    <!-- Centered Audio Player for Songs -->
+    <div id="songs" style="text-align: center;">
+        <h3>Song 1</h3>
+        <h3 id="songNowPlaying">AGENCY: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Agency-Talha-Anjum-Rap-Demon-Prod-by-UMAIR-Official-Lyric-Video_42Ekv1x_Qdo.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 2</h3>
+        <h3 id="songNowPlaying">MY PASSION: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Akcent-My-Passion-Official-Video_F8kD8PJ5x1k.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 3</h3>
+        <h3 id="songNowPlaying">STAY WITH ME: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Akcent-Stay-With-Me_gs9gFmuGCEU.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 4</h3>
+        <h3 id="songNowPlaying">THATS MY NAME: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Akcent-That-s-My-Name-Ultra-Music_oASZG96v0Rk.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 5</h3>
+        <h3 id="songNowPlaying">ARCADE * MANMERA: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Arcade-x-Mann-Mera-Mashup-Full-Version-Gravero_-aQMjByEeo8.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 6</h3>
+        <h3 id="songNowPlaying">FRIENDS: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Buzz-Friends-Daru-Badnaam-Swalla-Taki-Taki-DJ-Harshal-Mashup-Sunix-Thakor_bltbcOCrOC8.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 7</h3>
+        <h3 id="songNowPlaying">GUMAAN: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\GUMAAN-Young-Stunners-Talha-Anjum-Talhah-Yunus-Prod-By-Jokhay-Official-Music-Video_jIQ0Dx-4peE.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 8</h3>
+        <h3 id="songNowPlaying">BEWAFA: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Imran-Khan-Bewafa_Xv0DlKncjBI.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 9</h3>
+        <h3 id="songNowPlaying">SORRY: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Justin-Bieber-Sorry-PURPOSE-The-Movement_fRh_vgS2dFE.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 10</h3>
+        <h3 id="songNowPlaying">SERENA-SAFARI: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Serena - Safari (Official Video).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 11</h3>
+        <h3 id="songNowPlaying">STEREOHEART * ZALIMA: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Stereo Hearts x Zaalima (Hindi x English Mashup) DJ Sid Mallu Muzik Official.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 12</h3>
+        <h3 id="songNowPlaying">LET ME LOVE YOU: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Tareefan-Let-Me-Love-You-Dil-Diyaan-Gallan-Love-Me-Harder-DJ-Harshal-Mashup_6D5Ycnm8u2k.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 13</h3>
+        <h3 id="songNowPlaying">DONT LET ME DOWN: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\The Chainsmokers - Don't Let Me Down (Illenium Remix)_s8XIgR5OGJc.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 14</h3>
+        <h3 id="songNowPlaying">CLOSER: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\The-Chainsmokers-Closer-Lyric-ft-Halsey_PT2_F-1esPk.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Song 15</h3>
+        <h3 id="songNowPlaying">EXCUSES: </h3>
+        <audio controls>
+            <source src="C:\Users\Qasim Hafeez\Music\Zapya\20230521_1745\Excuses-Official-Video-AP-Dhillon-Gurinder-Gill-Intense_vX2cDW8LUWk.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Search Section -->
+        <div id="searchResult">
+            <h2>Search Results:</h2>
+            <ul id="searchList"></ul>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
